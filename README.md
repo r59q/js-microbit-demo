@@ -21,7 +21,7 @@ Contains
 
 inside `src/microbit-interface` are the interfaces we use. If you are comfortable, take a look.
 
-### Dependencies
+### Dependencies (skip if using `npm install`)
 The following npm packages are needed for typechecking, bluetooth and usb. Should not be needed if running `npm install`
 ```shell
 npm i dapjs
@@ -38,3 +38,7 @@ npm install --save @types/web-bluetooth
 ```shell
 npm i typescript
 ```
+
+### Contact
+
+If you have any questions, contact me on amh@cs.au.dk
