@@ -1,5 +1,7 @@
 # js-microbit-demo
+
 A demo for the interface used on ml-machine.org
+
 ## Getting started.
 
 - Clone the repository

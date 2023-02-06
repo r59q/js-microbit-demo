@@ -3,6 +3,7 @@ import EventEmittingMicrobitBluetooth from "./microbit-interface/Bluetooth/Event
 import MBSpecs from "./microbit-interface/MBSpecs";
 import ButtonStates = MBSpecs.ButtonStates;
 import EventEmittingMicrobitUSB from "./microbit-interface/USB/EventEmittingMicrobitUSB";
+import MicrobitUSB from "./microbit-interface/USB/MicrobitUSB";
 
 // Elements in index.html for visual feedback
 const connectButton = document.getElementById("connect_button");
@@ -17,6 +18,7 @@ const buttonBState = document.getElementById("buttonBState");
 const usbVersion = document.getElementById("usbVersion");
 const usbName = document.getElementById("usbName");
 const usbSerial = document.getElementById("usbSerial");
+const flashHexBtn = document.getElementById("flashHexBtn");
 
 const nameToPattern = document.getElementById("nameToPattern") as HTMLInputElement;
 const nameToPatternConvert = document.getElementById("nameToPatternConvert");
@@ -90,8 +92,12 @@ const microbitConnected = async (microbit: MicrobitBluetooth) => {
 }
 
 // Usb stuff
+let mbUsb: EventEmittingMicrobitUSB = undefined;
+
 usbConnectButton.addEventListener("click", async () => {
-    const mbUsb = await EventEmittingMicrobitUSB.eventEmittingRequestConnection();
+    mbUsb = await EventEmittingMicrobitUSB.eventEmittingRequestConnection();
+
+    flashHexBtn.style.display = "block";
 
     const microbitVersion = mbUsb.getModelNumber();
     usbVersion.innerHTML = microbitVersion.toString();
@@ -111,9 +117,19 @@ usbConnectButton.addEventListener("click", async () => {
     })
      */
 })
+flashHexBtn.addEventListener("click", () => {
+    const hexFile = mbUsb.getModelNumber() == 1 ? "./v1.hex" : "./v2.hex";
+
+    mbUsb.flashHex(hexFile, (progress) => {
+        flashHexBtn.innerHTML = Math.round(progress * 100) + "%";
+    }).then(() => {
+        flashHexBtn.innerHTML = "Flash complete!";
+    })
+})
 
 // Pattern / name stuff
 const getNameToPatternField = () => nameToPattern.value;
+
 
 nameToPatternConvert.addEventListener("click", () => {
     const name = getNameToPatternField();
@@ -133,6 +149,8 @@ nameToPatternConvert.addEventListener("click", () => {
     // We can convert patterns back to names using
     console.log(MBSpecs.Utility.patternToName(pairingPatternForZuzag))
 })
+
+
 
 // https://support.microbit.org/support/solutions/articles/19000067679-how-to-find-the-name-of-your-micro-bit
 // The pairing pattern for a microbit named zuzag

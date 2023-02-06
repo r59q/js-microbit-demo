@@ -5,9 +5,24 @@
         <title>Micro:bit demo</title>
     </head>
     <body>
+
+    <div>
+        <h1>Micro:bit USB demo</h1>
+        <div>
+            <button id="usb_connect">Press this to connect a micro:bit with USB</button>
+        </div>
+        <div>
+            <p>Usb version: <span id="usbVersion"></span></p>
+            <p>Name of micro:bit: <span id="usbName"></span></p>
+            <p>USB serial number: <span id="usbSerial"></span></p>
+            <button id="flashHexBtn" style="display: none">Flash hex</button>
+        </div>
+    </div>
+
     <div>
         <h1>Micro:bit bluetooth demo</h1>
         <div>
+            <p>If you don't know the name, you can connect using USB to find out</p>
             <input placeholder="name of microbit" id="name_field"/>
             <button id="connect_button">Press this to connect a micro:bit</button>
         </div>
@@ -21,18 +36,6 @@
             <p>Microbit version : <span id="mbVersion"></span></p>
             <p>Button state A (Released=0, Pressed=1, LongPressed=2): <span id="buttonAState"></span></p>
             <p>Button state B (Released=0, Pressed=1, LongPressed=2): <span id="buttonBState"></span></p>
-        </div>
-    </div>
-
-    <div>
-        <h1>Micro:bit USB demo</h1>
-        <div>
-            <button id="usb_connect">Press this to connect a micro:bit with USB</button>
-        </div>
-        <div>
-            <p>Usb version: <span id="usbVersion"></span></p>
-            <p>Name of micro:bit: <span id="usbName"></span></p>
-            <p>USB serial number: <span id="usbSerial"></span></p>
         </div>
     </div>
 
