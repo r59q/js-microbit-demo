@@ -224,7 +224,6 @@ namespace MBSpecs {
 		 * @returns {boolean[]} The pairing pattern
 		 */
 		public static nameToPattern(name: string): boolean[] {
-			console.log("Name", name);
 
 			const pattern: boolean[] = new Array<boolean>(25).fill(true);
 
@@ -235,7 +234,6 @@ namespace MBSpecs {
 
 			for (let column = 0; column < USBSpecs.MICROBIT_NAME_LENGTH; column++) {
 				for (let row = 0; row < USBSpecs.MICROBIT_NAME_LENGTH; row++) {
-					console.log(column, row, this.CODEBOOK_BLUETOOTH[row][column], name.charAt(column));
 					if (this.CODEBOOK_BLUETOOTH[row][column] === name.charAt(column)) {
 						break;
 					}
