@@ -8,6 +8,8 @@ A demo for the interface used on ml-machine.org
 - Run `npm install`
 - Run `npm start`
 - Open http://localhost:8080/
+- If your micro:bit doesnt have accelerometer / buttons enabled for reading
+   - Either use the website to flash by connecting the micro:bit using USB or transfer them manually
 
 ### The code
 
