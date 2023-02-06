@@ -1,5 +1,5 @@
 # js-microbit-demo
-
+A demo for the interface used on ml-machine.org
 ## Getting started.
 
 - Clone the repository
@@ -7,8 +7,18 @@
 - Run `npm start`
 - Open http://localhost:8080/
 
+### The code
+
+Contains
+
+- `index.html` - For demoing
+- `src/index.ts` - Shows example of how to use the interface
+  - I strongly recommend you start here!
+
+inside `src/microbit-interface` are the interfaces we use. If you are comfortable, take a look.
+
 ### Dependencies
-The following npm packages are needed for typechecking, bluetooth and usb.
+The following npm packages are needed for typechecking, bluetooth and usb. Should not be needed if running `npm install`
 ```shell
 npm i dapjs
 ```
