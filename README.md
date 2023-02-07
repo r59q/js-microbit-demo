@@ -21,6 +21,8 @@ Contains
 
 inside `src/microbit-interface` are the interfaces we use. If you are comfortable, take a look. If you want to use the interface, just copy this folder into your own project.
 
+Inside the interface is a file called MBSpecs, which contains some of the specifications of the micro:bit such as service UUIDs or characteristic UUIDs for ease of access. It also contains helper functions for converting an pairing pattern to name and vice versa.
+
 inside `/public/` are two .hex files for a version 1 or version 2 microbit respectively. If a micro:bit is connected via USB the demo can determine the version of the micro:bit and select the correct firmware for flashing. 
 
 ### Dependencies (skip if using `npm install`)
