@@ -19,7 +19,7 @@ Contains
 - `src/index.ts` - Shows example of how to use the interface
   - I strongly recommend you start here!
 
-inside `src/microbit-interface` are the interfaces we use. If you are comfortable, take a look.
+inside `src/microbit-interface` are the interfaces we use. If you are comfortable, take a look. If you wan't to use the interface, just copy this folder into your own project.
 
 ### Dependencies (skip if using `npm install`)
 The following npm packages are needed for typechecking, bluetooth and usb. Should not be needed if running `npm install`
