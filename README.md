@@ -21,6 +21,8 @@ Contains
 
 inside `src/microbit-interface` are the interfaces we use. If you are comfortable, take a look. If you want to use the interface, just copy this folder into your own project.
 
+inside `/public/` are two .hex files for a version 1 or version 2 microbit respectively. If a micro:bit is connected via USB the demo can determine the version of the micro:bit and select the correct firmware for flashing. 
+
 ### Dependencies (skip if using `npm install`)
 The following npm packages are needed for typechecking, bluetooth and usb. Should not be needed if running `npm install`
 ```shell
